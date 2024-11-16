@@ -11,7 +11,7 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public int codigo;
-    public Produto produto;
+    public int produto;
     public int quantidade;
     public float valor;
     
@@ -23,13 +23,13 @@ public class Item {
         this.codigo = codigo;
     }
 
-    public Produto getProduto() {
-        return produto;
-    }
+    // public Produto getProduto() {
+    //     return produto;
+    // }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
-    }
+    // public void setProduto(Produto produto) {
+    //     this.produto = produto;
+    // }
 
     public int getQuantidade() {
         return quantidade;

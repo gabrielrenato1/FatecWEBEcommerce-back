@@ -1,4 +1,4 @@
-package com.Repository;
+package com.projeto.loja.Repository;
 
 import java.util.Optional;
 import java.util.List;

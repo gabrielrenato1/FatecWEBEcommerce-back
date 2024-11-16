@@ -11,9 +11,9 @@ public class Cesta {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public int codigo;
-    public Cliente cliente;
+    public String cliente;
     public float total;
-    public Item item;
+    public int item;
     
     public int getCodigo() {
         return codigo;
@@ -23,13 +23,13 @@ public class Cesta {
         this.codigo = codigo;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
+    // public Cliente getCliente() {
+    //     return cliente;
+    // }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
+    // public void setCliente(Cliente cliente) {
+    //     this.cliente = cliente;
+    // }
 
     public float getTotal() {
         return total;
@@ -39,11 +39,11 @@ public class Cesta {
         this.total = total;
     }
 
-    public Item getItem() {
+    public int getItem() {
         return item;
     }
 
-    public void setItem(Item item) {
+    public void setItem(int item) {
         this.item = item;
     }
     

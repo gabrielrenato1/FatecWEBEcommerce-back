@@ -10,115 +10,48 @@ public class Produto {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public int codigo;
-    public String nome;
-    public String descricao;
-    public float preco;
-    public float precoAntigo;
-    public String imagem;
-    public float valor;
-    public String descritivo;
-    public int quantidade;
-    public String especificacoes;
+    public int id;
+    public String name;
+    public String image;
+    public String description;
+    public float price;
+    public float discount;
 
-    public Produto(){}
-    
-    public Produto(
-        int codigo, String nome, String descricao,
-        float preco, float precoAntigo, String imagem,
-        float valor, String descritivo, int quantidade,
-        String especificacoes
-    ){
-        this.setCodigo(codigo);
-        this.setNome(nome);
-        this.setDescricao(descricao);
-        this.setPreco(preco);
-        this.setPrecoAntigo(precoAntigo);
-        this.setImagem(imagem);
-        this.setValor(valor);
-        this.setDescritivo(descritivo);
-        this.setQuantidade(quantidade);
-        this.setEspecificacoes(especificacoes);
+    public int getId() {
+        return id;
     }
-    
-    public int getCodigo() {
-        return codigo;
+    public void setId(int id) {
+        this.id = id;
     }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public String getName() {
+        return name;
     }
-
-    public String getNome() {
-        return nome;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getImage() {
+        return image;
     }
-
-    public String getDescricao() {
-        return descricao;
+    public void setImage(String image) {
+        this.image = image;
     }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public String getDescription() {
+        return description;
     }
-
-    public float getPreco() {
-        return preco;
+    public void setDescription(String description) {
+        this.description = description;
     }
-
-    public void setPreco(float preco) {
-        this.preco = preco;
+    public float getPrice() {
+        return price;
     }
-
-    public float getPrecoAntigo() {
-        return precoAntigo;
+    public void setPrice(float price) {
+        this.price = price;
     }
-
-    public void setPrecoAntigo(float precoAntigo) {
-        this.precoAntigo = precoAntigo;
+    public float getDiscount() {
+        return discount;
     }
-
-    public String getImagem() {
-        return imagem;
-    }
-
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
-    }
-
-    public float getValor() {
-        return valor;
-    }
-
-    public void setValor(float valor) {
-        this.valor = valor;
-    }
-
-    public String getDescritivo() {
-        return descritivo;
-    }
-
-    public void setDescritivo(String descritivo) {
-        this.descritivo = descritivo;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public String getEspecificacoes() {
-        return especificacoes;
-    }
-
-    public void setEspecificacoes(String especificacoes) {
-        this.especificacoes = especificacoes;
+    public void setDiscount(float discount) {
+        this.discount = discount;
     }
 
 }

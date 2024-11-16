@@ -3,6 +3,7 @@ package com.projeto.loja.Controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.loja.Model.Item;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class ItemController {
     @PostMapping("/api/item")
@@ -29,7 +31,7 @@ public class ItemController {
     public Item carregar(@PathVariable int codigo){
         Item obj = new Item();
         obj.setCodigo(codigo);
-        obj.produto.setNome( "Cadeira Gamer"); 
+        // obj.produto.setNome( "Cadeira Gamer"); 
         obj.setQuantidade(2);   
         return obj;
     }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,9 +13,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Repository.ProdutoRepository;
 import com.projeto.loja.Model.Produto;
+import com.projeto.loja.Repository.ProdutoRepository;
 
+@CrossOrigin(origins = "*")
 @RestController
 public class ProdutoController {
     @Autowired
@@ -23,13 +25,13 @@ public class ProdutoController {
     @PostMapping("/api/produto")
     public String gravar(@RequestBody Produto obj){ 
         bd.save(obj);
-        return "O produto"+ obj.getNome() + "foi gravado!";
+        return "O produto"+ obj.getName() + "foi gravado!";
     }
 
     @PutMapping("/api/produto")
     public String alterar(@RequestBody Produto obj){
         bd.save(obj);
-        return "O produto"+ obj.getNome() + "foi alterado!";
+        return "O produto"+ obj.getName() + "foi alterado!";
     }
 
     @GetMapping("/api/produto/{codigo}")
