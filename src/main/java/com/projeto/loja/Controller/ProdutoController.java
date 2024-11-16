@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.loja.Model.Produto;
@@ -56,14 +57,9 @@ public class ProdutoController {
         return bd.findAll();
     }
 
-    @GetMapping("/api/produtos/vitrine")
-    public Optional<List<Produto>> listarVitrine(){
-        return bd.listarVitrine(301, 355);
-    }   
-
     @GetMapping("/api/produtos/busca")
-    public Optional<List<Produto>> buscar(){
-        return bd.busca("Cadeira");
+    public Optional<List<Produto>> buscar(@RequestParam String pesquisa){
+        return bd.search("%" + pesquisa + "%");
     }
 
 }
