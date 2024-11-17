@@ -1,22 +1,21 @@
 package com.projeto.loja.Controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.loja.Model.Cliente;
+import com.projeto.loja.Repository.ClienteRepository;
+
 
 @CrossOrigin(origins = "*")
+@RestController
 // @RestController
 public class ClienteController {
+    @Autowired
+    ClienteRepository bd;
     // @PostMapping("/api/cliente")
     // public String gravar(@RequestBody Cliente obj){
     //     return "O cliente"+ obj.getNome() + "foi gravado!";
@@ -45,4 +44,9 @@ public class ClienteController {
     // public List<Cliente> todos(){
     //     return new ArrayList<Cliente>();
     // }
+
+    @PostMapping("/api/login")
+    public Cliente login(@RequestBody Cliente cliente){
+        return bd.login(cliente.email, cliente.password);
+    }
 }

@@ -5,100 +5,68 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-// @Entity
+@Entity
 public class Cliente {
 
-    // @Id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
-    // public int codigo;
-    // public String nome;
-    // public String email;
-    // public String senha;
-    // public String telefone;
-    // public String documento;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public int id;
+    public String name;
+    public String email;
+    public String password;
+    public String phone;
+    public String cpf;
     // public String logradouro;
     // public String cep;
     // public String cidade;
     // public String complemento;
 
-    // public int getCodigo() {
-    //     return codigo;
-    // }
+    public int getId() {
+        return id;
+    }
 
-    // public void setCodigo(int codigo) {
-    //     this.codigo = codigo;
-    // }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    // public String getNome() {
-    //     return nome;
-    // }
+    public String getName() {
+        return name;
+    }
 
-    // public void setNome(String nome) {
-    //     this.nome = nome;
-    // }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    // public String getEmail() {
-    //     return email;
-    // }
+    public String getEmail() {
+        return email;
+    }
 
-    // public void setEmail(String email) {
-    //     this.email = email;
-    // }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    // public String getSenha() {
-    //     return senha;
-    // }
+    public String getPassword() {
+        return password;
+    }
 
-    // public void setSenha(String senha) {
-    //     this.senha = senha;
-    // }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-    // public String getTelefone() {
-    //     return telefone;
-    // }
+    public String getPhone() {
+        return phone;
+    }
 
-    // public void setTelefone(String telefone) {
-    //     this.telefone = telefone;
-    // }
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-    // public String getDocumento() {
-    //     return documento;
-    // }
+    public String getCpf() {
+        return cpf;
+    }
 
-    // public void setDocumento(String documento) {
-    //     this.documento = documento;
-    // }
-
-    // public String getLogradouro() {
-    //     return logradouro;
-    // }
-
-    // public void setLogradouro(String logradouro) {
-    //     this.logradouro = logradouro;
-    // }
-
-    // public String getCep() {
-    //     return cep;
-    // }
-
-    // public void setCep(String cep) {
-    //     this.cep = cep;
-    // }
-
-    // public String getCidade() {
-    //     return cidade;
-    // }
-
-    // public void setCidade(String cidade) {
-    //     this.cidade = cidade;
-    // }
-
-    // public String getComplemento() {
-    //     return complemento;
-    // }
-
-    // public void setComplemento(String complemento) {
-    //     this.complemento = complemento;
-    // }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
 }
