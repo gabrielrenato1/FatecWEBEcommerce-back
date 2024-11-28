@@ -14,6 +14,6 @@ public interface ProdutoRepository extends
 JpaRepository<Produto, Integer>{
 
     @Query(value = "SELECT * FROM produto WHERE name LIKE ?1", nativeQuery = true)
-    Optional<List<Produto>> search(String nome);
+    List<Produto> search(String nome);
 
 }

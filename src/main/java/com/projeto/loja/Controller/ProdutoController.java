@@ -58,7 +58,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/api/produtos/busca")
-    public Optional<List<Produto>> buscar(@RequestParam String pesquisa){
+    public List<Produto> buscar(@RequestParam String pesquisa){
         return bd.search("%" + pesquisa + "%");
     }
 
