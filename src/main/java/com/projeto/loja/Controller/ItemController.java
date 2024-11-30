@@ -20,11 +20,11 @@ public class ItemController {
     ItemRepository bd;
 
     @PostMapping("/api/item")
-    public String gravar(@RequestBody Item obj){
-        return "O item"+ obj.getCodigo() + "foi gravado!";
+    public List<Item> gravar(@RequestBody List<Item> obj){
+        return bd.saveAll(obj);
     }
 
-    @GetMapping("/api/itens")
+    @GetMapping("/api/item")
     public List<Item> todos(){
         return new ArrayList<Item>();
     }

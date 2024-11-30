@@ -14,7 +14,7 @@ public interface CestaRepository extends JpaRepository<Cesta, Integer> {
     @Query(value = "SELECT * FROM cesta WHERE id = ?1", nativeQuery = true)
     Cesta show(int codigo);
 
-    @Query(value = "SELECT * FROM cesta", nativeQuery = true)
-    List<Cesta> index();
+    @Query(value = "SELECT * FROM cesta WHERE cliente_id = ?1 ORDER BY codigo DESC", nativeQuery = true)
+    List<Cesta> index(int user_id);
 
 }

@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 @Entity
 public class Item {
@@ -11,10 +12,39 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public int codigo;
-    public int produto;
+    public int produto_id;
+    @Transient
+    public Produto produto;
+    public int cesta_id;
+    @Transient
+    public Cesta cesta;
     public int quantidade;
     public float valor;
     
+    public int getProdutoId() {
+        return produto_id;
+    }
+
+    public void setProdutoId(int produtoId) {
+        this.produto_id = produtoId;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    public int getCestaId() {
+        return cesta_id;
+    }
+
+    public void setCestaId(int cestaId) {
+        this.cesta_id = cestaId;
+    }
+
     public int getCodigo() {
         return codigo;
     }
@@ -22,14 +52,6 @@ public class Item {
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
-
-    // public Produto getProduto() {
-    //     return produto;
-    // }
-
-    // public void setProduto(Produto produto) {
-    //     this.produto = produto;
-    // }
 
     public int getQuantidade() {
         return quantidade;

@@ -52,12 +52,12 @@ public class ProdutoController {
         return "Produto"+ codigo +"removido com sucesso!";
     }
 
-    @GetMapping("/api/produtos")
+    @GetMapping("/api/produto")
     public List<Produto> todos(){
         return bd.findAll();
     }
 
-    @GetMapping("/api/produtos/busca")
+    @GetMapping("/api/produto/busca")
     public List<Produto> buscar(@RequestParam String pesquisa){
         return bd.search("%" + pesquisa + "%");
     }

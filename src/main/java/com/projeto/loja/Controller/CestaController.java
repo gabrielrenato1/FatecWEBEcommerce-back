@@ -30,9 +30,9 @@ public class CestaController {
         return bd.show(codigo);
     }
 
-    @GetMapping("/api/cestas")
-    public List<Cesta> todos(){
-        return bd.index();
+    @GetMapping("/api/cesta/cliente/{user_id}")
+    public List<Cesta> todos(@PathVariable int user_id){
+        return bd.index(user_id);
     }
 
 }
