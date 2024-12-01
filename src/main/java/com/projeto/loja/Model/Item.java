@@ -1,5 +1,7 @@
 package com.projeto.loja.Model;
 
+import java.util.Optional;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +16,7 @@ public class Item {
     public int codigo;
     public int produto_id;
     @Transient
-    public Produto produto;
+    public Optional<Produto> produto;
     public int cesta_id;
     @Transient
     public Cesta cesta;
@@ -29,11 +31,11 @@ public class Item {
         this.produto_id = produtoId;
     }
 
-    public Produto getProduto() {
+    public Optional<Produto> getProduto() {
         return produto;
     }
 
-    public void setProduto(Produto produto) {
+    public void setProduto(Optional<Produto> produto) {
         this.produto = produto;
     }
 
