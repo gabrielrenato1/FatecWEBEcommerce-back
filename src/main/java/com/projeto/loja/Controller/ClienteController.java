@@ -16,15 +16,10 @@ public class ClienteController {
     @Autowired
     ClienteRepository bd;
 
-    @PostMapping("/api/cliente")
-    public String gravar(@RequestBody Cliente obj){
-        return "O cliente foi gravado!";
+    @PostMapping("/api/register")
+    public Cliente gravar(@RequestBody Cliente obj){
+        return bd.save(obj);
     }
-
-    // @PutMapping("/api/cliente")
-    // public String alterar(@RequestBody Cliente obj){
-    //     return "O cliente"+ obj.getNome() + "foi alterado!";
-    // }
 
     @PostMapping("/api/login")
     public Cliente login(@RequestBody Cliente cliente){
